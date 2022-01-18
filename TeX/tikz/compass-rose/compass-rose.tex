@@ -1,0 +1,100 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% start of file 'compass-rose.tex'.                                 %%
+%%                                                                   %%
+%%                                                                   %%
+%% file version: 2022-01-18                                          %%
+%%                                                                   %%
+%% Copyright 2022 Daniel Sacré.                                      %%
+%%                                                                   %%    
+%% A very simple example of how to draw a compass rose with tikz     %%
+%%                                                                   %%
+%% The code could be optimized; e. g. via parsing an optional        %%
+%% argument and re-design of the macro architecture                  %% 
+%%                                                                   %%
+%% This piece of software comes without any warranty, not even that  %%
+%% it is fit for the intended purpose. Since it is an alpha-release, %%
+%% Bug reports and suggestions via github are highly welcome.        %%
+%%                                                                   %%
+%% LICENSE:                                                          %%
+%% This work may be distributed and/or modified under the            %%
+%% conditions of the LaTeX Project Public License version 1.3c, or   %%
+%% (at your option) any later version. The full license text is      %%
+%% available at http://www.latex-project.org/lppl/.                  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[border=10pt]{standalone}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{calc,intersections,patterns,decorations,decorations.pathmorphing}
+
+% macro to draw the circular shapes
+\newcommand{\compassCircles}[1]{
+	\draw[fill=white,draw=black, line width=#1*2pt](0,0)circle(#1*3.875cm);
+	\draw[fill=black,draw=black, line width=#1*0.5pt](0,0)circle(#1*3.25cm);
+	\draw[fill=white,draw=black, line width=#1*0.5pt](0,0)circle(#1*2.75cm);
+	\draw[black, line width=#1*5pt](0,0)circle(#1*2cm);
+	\draw[black, line width=#1*0.5pt](0,0)circle(#1*2.625cm);
+} % #1: scaling factor
+
+% macro to draw an arm of the big star
+\newcommand{\compassStarBigArm}[1]{
+	\begin{scope}[xscale=#1*0.5,yscale=#1*0.5]
+		\draw[fill=black,black,line width=#1*2pt,line cap=butt, join=round](0,0)--++(-1,-1)--++(-8,1)--++(8,1)--cycle;
+		\draw[draw=white,line width=#1*0.2pt,fill=white,join=round](0,0)--++(-1,1)--++(-8,-1)--cycle;
+	\end{scope}
+} % #1: scaling factor
+
+% macro to draw an arm of the small star
+\newcommand{\compassStarSmallArm}[1]{
+	\begin{scope}[xscale=#1*0.5,yscale=#1*0.5]
+		\draw[fill=black,black,line width=#1*2pt,line cap=butt, join=round](0,0)--++(-1,-1)--++(-5,1)--++(5,1)--cycle;
+		\draw[draw=white,line width=#1*0.2pt,fill=white,join=round](0,0)--++(-1,1)--++(-5,-1)--cycle;
+	\end{scope}
+} % #1: scaling factor
+
+% assemble the compass rose
+\newcommand{\compassRoseComplete}[1]{
+	\foreach \winkel in {45,135,225,315}{
+		\begin{scope}[rotate=\winkel,xscale=-1]
+			\compassStarSmallArm{#1}
+		\end{scope}
+	}
+	
+	\foreach \winkel in {0,90,180,270}{
+		\begin{scope}[rotate=\winkel,xscale=-1]
+			\compassStarBigArm{#1}
+		\end{scope}
+	}
+}
+
+% macro for placing the main compass labels
+\newcommand{\compassMainLabels}[4]{
+	\begin{scope}[scale=#2]
+		\node at (0,5.125+#4) {\rotatebox{#1}{\Huge \scalebox{#3}[#3]{N}}};
+		\node at (5.125+#4,0) {\rotatebox{#1}{\Huge \scalebox{#3}[#3]{E}}};
+		\node at (0,-5.125-#4) {\rotatebox{#1}{\Huge \scalebox{#3}[#3]{S}}};
+		\node at (-5.125-#4,0) {\rotatebox{#1}{\Huge \scalebox{#3}[#3]{W}}};
+	\end{scope}
+}% #1 = angle of rotation, #2 = scaling, #3 = scaling font, #4 = distance font
+
+\newcommand{\compass}[4]{
+	\begin{scope}[rotate=#1]
+		\compassCircles{#2}
+		\compassRoseComplete{#2}
+		\compassMainLabels{#1}{#2}{#3}{#4}
+	\end{scope}
+}% #1 = angle of rotation, #2 = scaling, #3 = scaling font, #4 = distance font
+
+
+\begin{document}
+	\begin{tikzpicture}
+		\compass{0}{4}{8}{0.75} % #1 = angle of rotation, #2 = scaling, #3 = scaling font, #4 = distance font
+	\end{tikzpicture}
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%% end of file 'compass-rose.tex' %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
