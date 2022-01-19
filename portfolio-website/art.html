@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+  <title>Art Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+  <style>
+      body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+  </style>
+
+  <body class="w3-light-grey">
+
+      <!-- w3-content defines a container for fixed size centered content, 
+      and is wrapped around the whole page content, except for the footer in this example -->
+      <div class="w3-content" style="max-width:1400px">
+
+          <!-- Header -->
+          <header class="w3-container w3-center w3-padding-32"> 
+            <h1><b>ART PORTFOLIO</b></h1>
+            <p>
+                This webpage is a collection of my art related projects I have been working on from 2013 to today. </br>
+                Most of the files are available in the associated github-repository: 
+                <a href="https://github.com/d-sacre/portfolio">https://github.com/d-sacre/portfolio</a>. </br>
+                If they are stored on an external server (e. g. a server of a publisher), 
+                I will provide the link to the original source.
+            </p>
+          </header>
+
+          <!--Licensing information-->
+          <div class="w3-card-4 w3-margin w3-white">
+            <div class="w3-container">
+            <h3>LICENSING</h3>
+              <p>
+                If not stated otherwise, all the content on this webpage is licensed under
+                Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0), 
+                <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">https://creativecommons.org/licenses/by-nc-nd/4.0/</a>.
+              </p>
+            </div>
+          </div>
+
+
+          <!-- Grid -->
+          <div class="w3-row">
+
+          <!-- Blog entries -->
+          <div class="w3-col l8 s12">
+            <!-- Blog entry -->
+            <div class="w3-card-4 w3-margin w3-white">
+                <div class="w3-container">
+                  <h3><b>Blender 3.0, Cycles X: Dynamic Skyboxes and Particle Systems </b></h3>
+                  <h5><span class="w3-opacity">Last Update: January 19, 2022</span></h5>
+                </div>
+            
+                <div class="w3-container">
+                  <p>
+                    For me, every new Blender Release is very exiting. In Blender 2.8, it was the real-time rendering engine EVEE,
+                    and for Blender 3.0, there is so much, that I do not know where to start. As an owner of an AMD Radeon RTX5700, 
+                    I am curious how the for Q2/2022 announced AMD graphics support of Blender running under Linux will boost my render performance. </br>
+                    Until the official release of this feature, there is plenty of things to discover; a Blender update usually comes with so many changes in
+                    the functionality and GUI, that a "familiarization project" is a great idea. I wanted to create a scene with a Particle System;
+                    with these I had some (perfomance) issues in the past. For the composition, I was thinking about a lighthouse situated on top of a cliff.
+                    That was something I had never done and the cone shape should put my hard surface modeling capabilities to the test.</br>
+                    After getting the proportions right and a pleasant compostion established, I added more details like plants, a bench etc. to the scene. 
+                    The grass is a simple Particle System of Type "Hair". It took some time until I could produce a satisfying density and color variation.
+                    In the end, I used two Particle Systems with different settings and colors.  </br>
+                    Throughout the whole process, I was not satisfied with the lighting. I was after a more cartoonish look than photorealism. My first attempt 
+                    was to crank up the intensity of my main scene light. This resulted in issues with the colors and shadows. Afterwards, I tried an HDRI. The 
+                    illumination was better, but the ultra realistic sky of the HDRI of choice did not fit to the cartoonish style in the foreground. By accident
+                    I stumbled across a new-to-me feature in Blender: Dynamic Skyboxes. The setup was very simple; just setting the sky and horizon color as well
+                    as the sun properties. After some test renders and tweaking the oversaturated colors (due to my previous brute force attempts) I got a nice, partially
+                    cloudy sky. Like expected, the render time increased drastically when switching from normal lighting to the skybox. The final render at
+                    1920p took on my Threadripper 16 Thread CPU over two minutes (2:03). After the Blender update, I noticed that the out-of-the-box settings
+                    increased the render times in comparison to Blender 2.9. However, the simple sky generation did in my opinion more than justify it.</br>
+                    For those who are interested in my artistic decisions, I created a pdf-presentation 
+                    outlining the main progress points. It can be downloaded from <a href="../Blender/particleSystems_skybox/lighthouse_creation-process_documentation_2022-01-19.pdf">here</a> or be viewed in the embedded pdf-viewer below.
+                    </br>
+                    <iframe src="../Blender/particleSystems_skybox/lighthouse_creation-process_documentation_2022-01-19.pdf" style="width:100%; height:400px; margin-top: 10px; margin-bottom: 10px;"></iframe>
+                     
+                  </p>
+                </div>
+              </div>
+
+            <!-- Blog entry -->
+            <div class="w3-card-4 w3-margin w3-white">
+                <div class="w3-container">
+                  <h3><b>Blender: Create Scientific Illustrations</b></h3>
+                  <h5><span class="w3-opacity">Last Update: January 19, 2022</span></h5>
+                </div>
+            
+                <div class="w3-container">
+                  <p>
+                    Usually, whilst working on scientific publications, there is no graphics designer available. Additionally, the expensive professional
+                    graphics tools are normally not included in the software catalogs of universities or research institutions. 
+                    For 2D (vector based) graphics, Inkscape, GIMP and Krita are a great OpenSource solutions. For 3D, there are less viable options 
+                    (besides perhaps for molecular structure visualization). Blender is great not only because it is for free, but also has a huge community
+                    which can help when a scientist with little modeling experience should experience any problems. 
+                  </p>
+                  <div class="w3-row">
+                    <div class="w3-col m8 s12">
+                      <!--<p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+          <!-- END BLOG ENTRIES -->
+          </div>
+
+          <!-- Introduction menu -->
+          <div class="w3-col l4">
+            <!-- About Card -->
+            <div class="w3-card w3-margin w3-margin-top">
+              <img src="https://cdnb.artstation.com/p/assets/images/images/045/396/959/large/daniel-sacre-lighthouse-final-2022-01-19-1080p.jpg?1642618950" style="width:100%; padding: 10px;"> </img> <!--https://github.com/d-sacre/portfolio/blob/main/TeX/tikz/compass-rose/compass-rose_web.png--><!--/TeX/tikz/compass-rose/-->
+              <div class="w3-container w3-white">
+                <h4><b>Little Lighthouse on a Hill</b></h4>
+                <p>
+                  An experiment with Dynamic Skyboxes and Particle Systems in Blender 3.0, Cycles X.</br>
+                  Artwork released under CC BY-SA 4.0; available in my <a href="https://dsacre.artstation.com/">ArtStation Portfolio</a>.</br></br>
+                  Contains the following pre-fabs:
+                  <ul>
+                    <li>CC-BY-SA 3.0:</li>
+                      ivy originally by Onsemeliot, <a href="https://opengameart.org/content/ivy">https://opengameart.org/content/ivy</a>,</br>
+                      CC-BY-SA 3.0; modified (ivy grapes removed, distorted)
+                    <li>CC0:</li>
+                    <ul>
+                      <li> 
+                        bench by yethiel, CC0, </br>
+                        <a href="https://opengameart.org/content/bench-1">https://opengameart.org/content/bench-1</a>
+                      </li>
+                      <li>
+                        wine barrel by James Ray Cock, CC0,</br>
+                        <a href="https://polyhaven.com/a/wine_barrel_01">https://polyhaven.com/a/wine_barrel_01</a>
+                      </li>
+                    </ul>
+                  </ul> 
+                </p>
+              </div>
+            </div><hr>
+          
+            <!-- Labels / tags -->
+            <div class="w3-card w3-margin">
+              <div class="w3-container w3-padding">
+                <h4>Tags</h4>
+              </div>
+              <div class="w3-container w3-white">
+              <p>
+                <span class="w3-tag w3-black w3-margin-bottom">Art</span> 
+                <span class="w3-tag w3-black w3-margin-bottom">Blender</span> 
+                <span class="w3-tag w3-black w3-margin-bottom">Coding</span> 
+                <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">GIMP</span>
+                <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Inkscape</span>
+                <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Python</span>   
+              </p>
+              </div>
+            </div>
+            
+          <!-- END Introduction Menu -->
+          </div>
+
+          <!-- END GRID -->
+          </div><br>
+          
+      <!-- END w3-content -->
+      </div>
+
+      <!-- Footer -->
+      <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+        <p>
+            <a href="../index.html">Home</a> <a href="./imprint.html">Imprint</a> <a href="./privacy.html">Privacy</a></br>
+            Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
+        </p>
+      </footer>
+
+  </body>
+</html>
