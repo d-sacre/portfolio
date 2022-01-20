@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+  <title>Typesetting Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+  <style>
+      body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+  </style>
+
+  <!--syntax highlighting-->
+  <link rel="stylesheet" href="./syntax-highlighting/styles/default.min.css">
+  <script src="./syntax-highlighting/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+
+  <body class="w3-light-grey">
+
+      <!-- w3-content defines a container for fixed size centered content, 
+      and is wrapped around the whole page content, except for the footer in this example -->
+      <div class="w3-content" style="max-width:1400px">
+
+          <!-- Header -->
+          <header class="w3-container w3-center w3-padding-32"> 
+            <h1><b>TYPESETTING PORTFOLIO</b></h1>
+            <p>
+                This webpage is a collection of my typesetting related projects I have been working on from 2013 to today. </br>
+                Most of the files are available in the associated github-repository: 
+                <a href="https://github.com/d-sacre/portfolio">https://github.com/d-sacre/portfolio</a>. </br>
+                If they are stored on an external server (e. g. a server of a publisher), 
+                I will provide the link to the original source.
+            </p>
+          </header>
+
+          <!--Licensing information-->
+          <div class="w3-card-4 w3-margin w3-white">
+            <div class="w3-container">
+            <h3>LICENSING</h3>
+              <p>
+                If not stated otherwise, all the content on this webpage is licensed under
+                Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0), 
+                <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">https://creativecommons.org/licenses/by-nc-nd/4.0/</a>.
+              </p>
+            </div>
+          </div>
+
+
+          <!-- Grid -->
+          <div class="w3-row">
+
+          <!-- Blog entries -->
+          <div class="w3-col l8 s12">
+            <!-- Blog entry -->
+            <div class="w3-card-4 w3-margin w3-white">
+                <div class="w3-container">
+                  <h3><b> minimalcv: My own LaTeX class for typesetting job applications and CV's</b></h3>
+                  <h5><span class="w3-opacity">Last Update: January 20, 2022</span></h5>
+                </div>
+            
+                <div class="w3-container">
+                  <p>
+                    For the last few years, I was using the moderncv LaTeX class to typeset job applications. Recently, 
+                    when trying to change the font, adjusting the colors and other minor details, I hit a road block.
+                    Despite the class being initially published in 2016 and heavily used ever since, there was no manual
+                    available and the example files could not provide any information for my specific problem. Additionally,
+                    I was not completely satisfied with the header and footer designs in my previous documents. After some 
+                    research in the moderncv.cls and associated usepackages, it seemed that I could achieve my goal quicker
+                    by writing my own class based upon the scrreprt class and the scrletter usepackage. </br>
+                    After some quick research, I was able to create a minimal working example (MWE), with which I could start
+                    the lengthy process of to debugging the little issues. Most challenging was to find the names of the many 
+                    KOMAvar's in the 593 pages long manual so that I could apply my changes properly. </br>
+                    In the end, I summarized as much of the settings as possible into a class file in order to prevent the main LaTeX file 
+                    from getting too cluttered. The final main code structure I settled on is shown in the code listing below.
+                    <pre style="margin-top: 1px; margin-bottom: 1px">
+                    <code class="language-latex">
+% !TeX program = lualatex
+
+\documentclass{minimalcv}
+
+% Load additional usepackages (optional)
+
+% Setting styles
+\KOMAoption{fontsize}{11pt} % fontsize by default 11 pt
+% set the correct language for features like formating the date etc.
+\usepackage[english]{babel} 
+
+% Setting KOMAvar's for addresses, phone numbers, etc.
+
+\begin{document}
+    \begin{coverLetter}
+        \subject{SUBJECT}
+        \opening{OPENING}
+        
+        LETTER CONTENT
+        
+        \closing{CLOSING}
+        
+        \enclosure{ENCLOSURE} % optional
+    \end{coverLetter}
+    
+    \begin{vitae}
+        CV CONTENT
+        \cvclosing
+    \end{vitae}
+\end{document}
+                    </code>
+                    </pre>
+                    This code (plus filling in the names, addresses, etc.) generates the pdf which can be downloaded from <a href="../TeX/minimalcv/minimalcv_example.pdf">here</a> or be viewed in the embedded pdf-viewer below. 
+                    <iframe src="../TeX/minimalcv/minimalcv_example.pdf" style="width:100%; height:400px; margin-top: 10px; margin-bottom: 10px;"></iframe>
+                    For the little amount of code I had to write (minimalcv.cls: 350 lines including comments), the resulting document looks visually pleasing.
+                    Perfomance wise, it needs some improvement (compilation takes a bit long) and not all options can be easily changed (yet). For those
+                    who are interested, the proof-of-concept version of this project is available at <a href="https://github.com/d-sacre/latex-minimalcv">https://github.com/d-sacre/latex-minimalcv</a> under 
+                    the <a href="http://www.latex-project.org/lppl/">LaTeX Project Public License Version 1.3c</a>.
+                  </p>
+                </div>
+              </div>
+
+          <!-- END BLOG ENTRIES -->
+          </div>
+
+          <!-- Introduction menu -->
+          <div class="w3-col l4">
+            <!-- About Card -->
+            <div class="w3-card w3-margin w3-margin-top">
+              <img src="../TeX/tikz/simple-tikz-example/simple-tikz-example_bitmap.png" style="width:100%; padding: 10px;"> </img> <!--https://github.com/d-sacre/portfolio/blob/main/TeX/tikz/compass-rose/compass-rose_web.png--><!--/TeX/tikz/compass-rose/-->
+              <div class="w3-container w3-white">
+                <h4><b>Squaring the circle</b></h4>
+                <p>
+                  Squaring the circle with LaTeX is very simple: Just use nodes with shapes and specify the number of the polygon sides. To spice it all up,
+                  add some color. Works with plain LaTeX; no Lua, expl3 or (much) pgf needed. Just a \foreach loop and the classic LaTeX counter. Source code 
+                  available <a href="../TeX/tikz/simple-tikz-example/simple-tikz-example.tex">here</a>. </br>
+                  License: <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.en">Creative Commons Zero (CC0 1.0)</a>.
+                </p>
+              </div>
+            </div><hr>
+          
+            <!-- Labels / tags -->
+            <div class="w3-card w3-margin">
+              <div class="w3-container w3-padding">
+                <h4>Tags</h4>
+              </div>
+              <div class="w3-container w3-white">
+              <p>
+                <span class="w3-tag w3-black w3-margin-bottom">Typesetting</span> 
+                <span class="w3-tag w3-black w3-margin-bottom">LaTeX</span> 
+                <span class="w3-tag w3-black w3-margin-bottom">LuaLaTeX</span> 
+                <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">TikZ</span>
+                <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">pgfplots</span>
+                <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">pgfplotstable</span>   
+              </p>
+              </div>
+            </div>
+            
+          <!-- END Introduction Menu -->
+          </div>
+
+          <!-- END GRID -->
+          </div><br>
+          
+      <!-- END w3-content -->
+      </div>
+
+      <!-- Footer -->
+      <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+        <p>
+            <a href="../index.html">Home</a> <a href="./imprint.html">Imprint</a> <a href="./privacy.html">Privacy</a></br>
+            Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>, 
+            Syntax Highlighting by <a href="https://highlightjs.org/">highlight.js</a>
+        </p>
+      </footer>
+
+  </body>
+</html>
