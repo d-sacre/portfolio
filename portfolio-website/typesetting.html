@@ -26,10 +26,10 @@
           <header class="w3-container w3-center w3-padding-32"> 
             <h1><b>TYPESETTING PORTFOLIO</b></h1>
             <p>
-                This webpage is a collection of my typesetting related projects I have been working on from 2013 to today. </br>
+                This webpage is a collection of my typesetting-related projects I have been working on since 2013. </br>
                 Most of the files are available in the associated github-repository: 
                 <a href="https://github.com/d-sacre/portfolio">https://github.com/d-sacre/portfolio</a>. </br>
-                If they are stored on an external server (e. g. a server of a publisher), 
+                If files are stored on an external server (e. g. a server of a publisher), 
                 I will provide the link to the original source.
             </p>
           </header>
@@ -56,7 +56,7 @@
             <div class="w3-card-4 w3-margin w3-white">
                 <div class="w3-container">
                   <h3><b> minimalcv: My own LaTeX class for typesetting job applications and CV's</b></h3>
-                  <h5><span class="w3-opacity">Last Update: January 20, 2022</span></h5>
+                  <h5><span class="w3-opacity">Last Update: January 24, 2022</span></h5>
                 </div>
             
                 <div class="w3-container">
@@ -68,11 +68,11 @@
                     I was not completely satisfied with the header and footer designs in my previous documents. After some 
                     research in the moderncv.cls and associated usepackages, it seemed that I could achieve my goal quicker
                     by writing my own class based upon the scrreprt class and the scrletter usepackage. </br>
-                    After some quick research, I was able to create a minimal working example (MWE), with which I could start
-                    the lengthy process of to debugging the little issues. Most challenging was to find the names of the many 
+                    After some quick research, I was able to create a minimal working example (MWE), with which I could start off
+                    the lengthy process of eliminating all the little bugs. Most challenging was to find the names of the many 
                     KOMAvar's in the 593 pages long manual so that I could apply my changes properly. </br>
                     In the end, I summarized as much of the settings as possible into a class file in order to prevent the main LaTeX file 
-                    from getting too cluttered. The final main code structure I settled on is shown in the code listing below.
+                    from getting too cluttered. The final main code structure I settled on is shown in the following code listing:
                     <pre style="margin-top: 1px; margin-bottom: 1px">
                     <code class="language-latex">
 % !TeX program = lualatex
@@ -107,8 +107,14 @@
 \end{document}
                     </code>
                     </pre>
-                    This code (plus filling in the names, addresses, etc.) generates the pdf which can be downloaded from <a href="../TeX/minimalcv/minimalcv_example.pdf">here</a> or be viewed in the embedded pdf-viewer below. 
-                    <iframe src="../TeX/minimalcv/minimalcv_example.pdf" style="width:100%; height:400px; margin-top: 10px; margin-bottom: 10px;"></iframe>
+                    This code (plus filling in the names, addresses, etc.) generates an example pdf which can be downloaded from <a href="../TeX/minimalcv/minimalcv_example.pdf">here</a>. </br>
+                    A converted bitmap image of the example pdf are the following two images. 
+                    <div style="margin-top: 10px; margin-bottom: 10px;">
+                      <div style="display:inline-block;">
+                        <img src="../TeX/minimalcv/minimalcv_example_page1.png" style="width: 47.5%; border: 2px solid #555;">
+                        <img src="../TeX/minimalcv/minimalcv_example_page2.png" style="width: 47.5%; border: 2px solid #555;">
+                      </div>
+                    </div>
                     For the little amount of code I had to write (minimalcv.cls: 350 lines including comments), the resulting document looks visually pleasing.
                     Perfomance wise, it needs some improvement (compilation takes a bit long) and not all options can be easily changed (yet). For those
                     who are interested, the proof-of-concept version of this project is available at <a href="https://github.com/d-sacre/latex-minimalcv">https://github.com/d-sacre/latex-minimalcv</a> under 
