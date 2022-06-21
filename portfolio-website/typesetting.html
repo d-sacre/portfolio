@@ -16,6 +16,10 @@
   <script src="./syntax-highlighting/highlight.min.js"></script>
   <script>hljs.highlightAll();</script>
 
+  <!--expand and hide content-->
+  <script src="./js/expand-and-hide-content.js"></script>
+  <link rel="stylesheet" href="./css/customize-w3.css">
+
   <body class="w3-light-grey">
 
       <!-- w3-content defines a container for fixed size centered content, 
@@ -53,13 +57,12 @@
           <!-- Blog entries -->
           <div class="w3-col l8 s12">
             <!-- Blog entry -->
-            <div class="w3-card-4 w3-margin w3-white">
-                <div class="w3-container">
-                  <h3><b> minimalcv: My own LaTeX class for typesetting job applications and CV's</b></h3>
-                  <h5><span class="w3-opacity">Last Update: January 24, 2022</span></h5>
+            <div class="w3-card-4 w3-margin w3-white" id="minimalcv-top">
+                <div class="w3-container collapsible" id="minimalcv-collapsible">
+                  <h3><b>minimalcv: A LaTeX class for typesetting job applications and CV's</b></h3>
+                  <h5><span class="w3-opacity">Last Update: June 21, 2022</span></h5>
                 </div>
-            
-                <div class="w3-container">
+                <div class="w3-container "  id="minimalcv" style="display: none;">
                   <p>
                     For the last few years, I was using the moderncv LaTeX class to typeset job applications. Recently, 
                     when trying to change the font, adjusting the colors and other minor details, I hit a road block.
@@ -86,7 +89,7 @@
 % set the correct language for features like formating the date etc.
 \usepackage[english]{babel} 
 
-% Setting KOMAvar's for addresses, phone numbers, etc.
+% Here: Set KOMAvar's for addresses, phone numbers, etc.
 
 \begin{document}
     \begin{coverLetter}
@@ -115,13 +118,50 @@
                         <img src="../TeX/minimalcv/minimalcv_example_page2.png" style="width: 47.5%; border: 2px solid #555;">
                       </div>
                     </div>
-                    For the little amount of code I had to write (minimalcv.cls: 350 lines including comments), the resulting document looks visually pleasing.
+                    For the little amount of code I had to write (minimalcv.cls: 366 lines including comments), the resulting document looks visually pleasing.
                     Perfomance wise, it needs some improvement (compilation takes a bit long) and not all options can be easily changed (yet). For those
                     who are interested, the proof-of-concept version of this project is available at <a href="https://github.com/d-sacre/latex-minimalcv">https://github.com/d-sacre/latex-minimalcv</a> under 
                     the <a href="http://www.latex-project.org/lppl/">LaTeX Project Public License Version 1.3c</a>.
                   </p>
+                  <div class="w3-row">
+                    <div class="w3-col m8 s12">
+                      <p>
+                        <form method="get" action="#minimalcv-top">
+                          <button class="w3-button w3-padding-large w3-white w3-border" type="submit" onclick="hideContentByID('minimalcv','minimalcv-collapsible')"><b>Show less</b></button>
+                        </form>
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
+
+            <!-- Blog entry docART-->
+            <div class="w3-card-4 w3-margin w3-white" id="docART-top">
+              <div class="w3-container collapsible" id="docART-collapsible">
+                <h3><b>docART: A utility for semi-automated pdf documentation generation</b></h3> <!--&#11163;-->
+                <h5><span class="w3-opacity">Last Update: June 21, 2022</span></h5>
+              </div>
+              <div class="w3-container "  id="docART" style="display: none;">
+                <p>
+                  The project is available at
+                  <a href="https://github.com/d-sacre/docart-documentation-utility">https://github.com/d-sacre/docart-documentation-utility</a> 
+                  under 
+                  <a href="https://www.gnu.org/licenses/gpl-3.0.txt">GNU Public License (GPL-3.0)</a>. 
+                  Please note that the backend is comprised of many other projects, all of which have their own license agreement. <br>
+                  Special thanks to the project's co-developer <a href="https://github.com/MartinStimpfl">Martin Stimpfl</a> for the inital idea and support throughout the whole project. 
+                </p>
+                <div class="w3-row">
+                  <div class="w3-col m8 s12">
+                    <p>
+                      <form method="get" action="#docART-top">
+                        <button class="w3-button w3-padding-large w3-white w3-border" type="submit" onclick="hideContentByID('docART', 'docART-collapsible')"><b>Show less</b></button>
+                      </form>
+                    </p>
+                  </div>
+                </div>
+                <!--<button class="showLessButton" id="showLessButton2" onclick="hideContentByID('hideableContent2')">Show less</button>-->
+              </div>
+            </div>
 
           <!-- END BLOG ENTRIES -->
           </div>
@@ -172,10 +212,14 @@
       <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
         <p>
             <a href="../index.html">Home</a> <a href="./imprint.html">Imprint</a> <a href="./privacy.html">Privacy</a></br>
+            GitHub Repositories: <a href="https://github.com/d-sacre/">https://github.com/d-sacre/</a> <br>
             Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>, 
             Syntax Highlighting by <a href="https://highlightjs.org/">highlight.js</a>
         </p>
       </footer>
 
   </body>
+
+  <!--Include script for collapsible content-->
+  <script src="./js/collapsible.js"></script>
 </html>

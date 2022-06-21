@@ -1,0 +1,39 @@
+.collapsible {
+    cursor: pointer;
+    background-color: #777;
+    color: white;
+    border: 2px solid black;
+    width: 100%;
+    /* padding-bottom: 18px; */
+}
+
+.collapsible:hover {
+    background-color: darkgray;
+}
+
+div.collapsible h3:after{
+    font-size: 24px;
+    font-weight: bold;
+    float: right;
+    color: white;
+    opacity: 0.5;
+   content: '+' !important; 
+}
+
+div.active h3:after{
+    content: '-' !important; 
+ }
+
+
+/* div.collapsible h5:after{
+    float: right;
+    color: white;
+    opacity: 0.5;
+   content: 'Show more \2B9B' !important; 
+}
+
+div.active h5:after{
+    content: 'Show less \2B99' !important; 
+ }
+   */
+

@@ -2,7 +2,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% start of file `simple-tikz-example.tex'.                          %%
 %%                                                                   %%
-%% Author: Daniel Sacré; date: 2022-01-20                            %%
+%% Author: Daniel Sacré; date: 2022-06-21                            %%
 %%                                                                   %%    
 %% A very simple example for using node shapes and color mixing      %%
 %% within tikz                                                       %%
@@ -31,7 +31,7 @@
 				\foreach \mix in {100,66,33}{% iterate over all color mixing factors
 					% draw node with \edgeCount polygon edges, fill it with color and
 					% set node text to the number of polygon edges 
-					\node[draw,fill=\colorX!\mix!\colorY,regular polygon,regular polygon sides=\edgeCount] at (2*\thecolumns,2*\therows) {$n=$\,\shape};
+					\node[draw,fill=\colorX!\mix!\colorY,regular polygon,regular polygon sides=\edgeCount] at (2*\thecolumns,2*\therows) {$n=$\,\edgeCount};
 					\stepcounter{columns} % advance column position
 				}
 			}

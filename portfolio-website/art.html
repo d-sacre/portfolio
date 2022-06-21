@@ -86,8 +86,8 @@
             <!-- Blog entry -->
             <div class="w3-card-4 w3-margin w3-white">
                 <div class="w3-container">
-                  <h3><b>Blender: Create Scientific Illustrations</b></h3>
-                  <h5><span class="w3-opacity">Last Update: January 24, 2022</span></h5>
+                  <h3><b>Blender: Creation of Scientific Illustrations</b></h3>
+                  <h5><span class="w3-opacity">Last Update: March 1, 2022</span></h5>
                 </div>
             
                 <div class="w3-container">
@@ -96,14 +96,19 @@
                     graphics tools are normally not included in the software catalogs of universities or research institutions. 
                     For 2D (vector based) graphics, one can still find many great OpenSource alternatives like Inkscape, GIMP and Krita. However, for 3D-graphics creation, there are almost no viable options 
                     (besides perhaps for molecular structure visualization). This renders Blender a great choice, not only because it is for free, but also because it has a huge and very active community, 
-                    which can help in case a scientist with little modeling experience faces any problems. </br>
-                    
+                    which can help in case a scientist with little modeling experience faces any problems. <br>
+                    At first, I tried to cover most of the graphics tasks with pixel based programs. For vector based experimental setup drawings, LaTeX/TikZ was my choice
+                    over Inkscape (direct LaTeX is easier when complicated scientific notation is required). The downside of both Inkscape and TikZ is the effort required 
+                    to draw elaborate diagrams where correct perspective or 3D effects are necessary. This limitation became very apparent during the writing of my Master thesis,
+                    where I had to draw a very complicated optical setup with many components. From that point on, I started to create all my setup schematics in 3D with Blender (although the rendered output is no longer vector based, 
+                    which causes minor issues). When I needed a good visualization of the double slit experiment for a coference talk, I had gained enough experience so that I could finish the task
+                    in a very short time and solve all the occuring technical issues.  
                   </p>
-                  <div class="w3-row">
-                    <div class="w3-col m8 s12">
-                      <!--<p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>-->
-                    </div>
-                  </div>
+                  <p>
+                     Very early into the project, I needed to optimize the scene heavily, less due my lack in 3D modeling skills, but more to hardware limitations. The only machine I had acccess to (Lenovo T430, Duo-Core, 8 GB RAM, no external GPU) could 
+                     not deal with the hair particle systems I used to make the tennis balls; it ran out of RAM before all the particles could be loaded. The solution was to reduce the number of tennis balls as well as the amount of emitted hairs per ball.
+
+                  </p>
                 </div>
               </div>
 
@@ -185,6 +190,7 @@
       <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
         <p>
             <a href="../index.html">Home</a> <a href="./imprint.html">Imprint</a> <a href="./privacy.html">Privacy</a></br>
+            GitHub Repositories: <a href="https://github.com/d-sacre/">https://github.com/d-sacre/</a> <br>
             Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
         </p>
       </footer>
