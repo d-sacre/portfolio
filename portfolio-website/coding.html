@@ -11,6 +11,10 @@
       body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   </style>
 
+  <!--expand and hide content-->
+  <script src="./js/expand-and-hide-content.js"></script>
+  <link rel="stylesheet" href="./css/customize-w3.css">
+
   <body class="w3-light-grey">
 
       <!-- w3-content defines a container for fixed size centered content, 
@@ -23,7 +27,7 @@
             <p>
                 This webpage is a collection of my coding-related projects I have been working on since 2013. </br>
                 Most files are available in the associated github-repository: 
-                <a href="https://github.com/d-sacre/portfolio">https://github.com/d-sacre/portfolio</a>. </br>
+                <a href="https://github.com/d-sacre/portfolio" target="_blank" rel="noopener noreferrer">https://github.com/d-sacre/portfolio</a>. </br>
                 If files are stored on an external server (e. g. a server of a publisher), 
                 I will provide the link to the original source.
             </p>
@@ -36,7 +40,7 @@
               <p>
                 If not stated otherwise, all the content on this webpage is licensed under
                 Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0), 
-                <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">https://creativecommons.org/licenses/by-nc-nd/4.0/</a>.
+                <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener noreferrer">https://creativecommons.org/licenses/by-nc-nd/4.0/</a>.
               </p>
             </div>
           </div>
@@ -47,93 +51,112 @@
 
           <!-- Blog entries -->
           <div class="w3-col l8 s12">
-            <!-- Blog entry -->
-            <div class="w3-card-4 w3-margin w3-white">
-                <div class="w3-container">
-                  <h3><b> How to calculate Helium dewar fill levels with html/css/JavaScript </b></h3>
+            <!-- Blog entry LHeCalculator-->
+            <div class="w3-card-4 w3-margin w3-white" id="LHeCalculator-top">
+              <div class="w3-container collapsible" id="LHeCalculator-collapsible">
+                  <h3><b>How to calculate Helium dewar fill levels with html/css/JavaScript</b></h3>
                   <h5><span class="w3-opacity">Last Update: February 3, 2022</span></h5>
-                </div>
-            
-                <div class="w3-container">
-                  <p>
-                    During my master thesis, I had to perform optical experiments at temperatures around 4.2 K (-268.95°C). These low temperatures not only
-                    require a specialized cooling system (in my case a liquid based cryostat), but also very few liquids (so called cryogens) 
-                    have a low enough boiling point. For my experiments, I used a dual cryogen cryostat, with liquid nitrogen (LN<sub>2</sub>) to prevent the 
-                    main cryogen, liquid helium (LHe), from boiling away too quickly.<br>
-                    Refilling and cooling down the cryostat is a very expensive and time consuming process, so a lot of planning to maximize the usage of the cryogens is required.
-                    This includes keeping track of how many liters of cryogens are left, so that a new order can be placed just before the supplies run out. Liquid helium is so cold,
-                    that measuring the volume of the remaining liquid is quite difficult. Weighing the helium transport dewar is one option; if no scale is available,
-                    one can use a dipstick with a membrane at the end: As long as there is a ratteling noise audible, the end of the dipstick did not touch the surface of the liquid helium. 
-                    Measuring the stick-out distance at the position where the noise stops and converting it to volume according to the dewar manufacturer leads to a relatively accurate 
-                    result. However, in my setup, both options were not available during the cryostat filling process. So I had to resort to the final option of trying to reconstruct
-                    the fill levels based upon the helium evaporation gauge in the return line. This unit measures the helium evaporation of the complete system (cryostat and transport dewar);
-                    combined with the fill level gauge of the cryostat (in percent of course), there is the possibility to estimate the amount of liquid 
-                    helium remaining in the transport dewar. 
-                  </p>
-                  <p>
-                    Based upon the technical constraints, I formulated my requirement specifications for my tool as follows:
-                    <ol>
-                      <li>
-                        The calculated remaining liquid helium volume has to be accurate to within &#8723;6 liters (required due to handling guidelines of transport dewar;
-                        despite measurement inaccuracy of dipstick with &#8723;5 liters),
-                      </li>
-                      <li>
-                        Needs to work for different cryostats/setups (I was working on different setups),
-                      </li>
-                      <li>
-                        Application has to be portable between computers (due to 2.),
-                      </li>
-                      <li>
-                        Application must not require any installation (not all machines with administrator priveliges/internet access),
-                      </li>
-                      <li>
-                        Application must not require internet access (not all machines connected to the internet),
-                      </li>
-                      <li>
-                        Application must be easy to use and "install" (other colleagues should be able to use it),
-                      </li>
-                      <li>
-                        Application must have a GUI (not all colleagues who potentially might use the utility willing to work in the command line).
-                      </li>
-                    </ol>
-                    Requirements 3, 4, 6 and 7 basically only rendered a website based solution with html/css/JavaScript feasible: All machines had
-                    a web browser of some sort installed, the JavaScript logic/html-css-GUI could be packaged into one copy-paste-file (ready-to-use, no installation
-                    required) and html automatically means GUI.
-                  </p>
-                </div>
               </div>
+              <div class="w3-container" id="LHeCalculator" style="display: none;">
+                  <p>
+                      During my master thesis, I had to perform optical experiments at temperatures around 4.2 K (-268.95°C). These low temperatures not only
+                      require a specialized cooling system (in my case a liquid based cryostat), but also very few liquids (so called cryogens) 
+                      have a low enough boiling point. For my experiments, I used a dual cryogen cryostat, with liquid nitrogen (LN<sub>2</sub>) to prevent the 
+                      main cryogen, liquid helium (LHe), from boiling away too quickly.<br>
+                      Refilling and cooling down the cryostat is a very expensive and time consuming process, so a lot of planning to maximize the usage of the cryogens is required.
+                      This includes keeping track of how many liters of cryogens are left, so that a new order can be placed just before the supplies run out. Liquid helium is so cold,
+                      that measuring the volume of the remaining liquid is quite difficult. Weighing the helium transport dewar is one option; if no scale is available,
+                      one can use a dipstick with a membrane at the end: As long as there is a ratteling noise audible, the end of the dipstick did not touch the surface of the liquid helium. 
+                      Measuring the stick-out distance at the position where the noise stops and converting it to volume according to the dewar manufacturer leads to a relatively accurate 
+                      result. However, in my setup, both options were not available during the cryostat filling process. So I had to resort to the final option of trying to reconstruct
+                      the fill levels based upon the helium evaporation gauge in the return line. This unit measures the helium evaporation of the complete system (cryostat and transport dewar);
+                      combined with the fill level gauge of the cryostat (in percent of course), there is the possibility to estimate the amount of liquid 
+                      helium remaining in the transport dewar. 
+                  </p>
+                  <p>
+                      Based upon the technical constraints, I formulated my requirement specifications for my tool as follows:
+                      <ol>
+                          <li>
+                          The calculated remaining liquid helium volume has to be accurate to within &#8723;6 liters (required due to handling guidelines of transport dewar;
+                          despite measurement inaccuracy of dipstick with &#8723;5 liters),
+                          </li>
+                          <li>
+                          Needs to work for different cryostats/setups (I was working on different setups),
+                          </li>
+                          <li>
+                          Application has to be portable between computers (due to 2.),
+                          </li>
+                          <li>
+                          Application must not require any installation (not all machines with administrator priveliges/internet access),
+                          </li>
+                          <li>
+                          Application must not require internet access (not all machines connected to the internet),
+                          </li>
+                          <li>
+                          Application must be easy to use and "install" (other colleagues should be able to use it),
+                          </li>
+                          <li>
+                          Application must have a GUI (not all colleagues who potentially might use the utility willing to work in the command line).
+                          </li>
+                      </ol>
+                      Requirements 3, 4, 6 and 7 basically only rendered a website based solution with html/css/JavaScript feasible: All machines had
+                      a web browser of some sort installed, the JavaScript logic/html-css-GUI could be packaged into one copy-paste-file (ready-to-use, no installation
+                      required) and html automatically means GUI.
+                  </p>
 
-            <!-- Blog entry -->
-            <div class="w3-card-4 w3-margin w3-white">
-                <div class="w3-container">
+                  <div class="w3-row">
+                      <div class="w3-col m8 s12">
+                      <p>
+                          <form method="get" action="#LHeCalculator-top">
+                          <button class="w3-button w3-padding-large w3-white w3-border" type="submit" onclick="hideContentByID('LHeCalculator', 'LHeCalculator-collapsible')"><b>Show less</b></button>
+                          </form>
+                      </p>
+                      </div>
+                  </div>
+              </div>
+            </div>
+
+            <!-- Blog entry MissionCalypso-->
+            <div class="w3-card-4 w3-margin w3-white" id="MissionCalypso-top">
+              <div class="w3-container collapsible" id="MissionCalypso-collapsible">
                   <h3><b>Mission Calypso: A html/ccs/JavaScript game as a university project</b></h3>
                   <h5><span class="w3-opacity">Last Update: February 3, 2022</span></h5>
-                </div>
-            
-                <div class="w3-container">
-                  <p>
-                    During the university IT training, I participated in a course about html/css/JavaScript. For the final course assignment, I teamed up with three other
-                    students to create a real-time resource managment game situated in the fictious Victorian Space Age. Over the course of approximately six weeks, we created a feature complete minimal viable product,
-                    which we decided to name "Mission Calypso", after Saturn's moon where we set the background plot.</br>
-                    The player is acting as Commander Been, who has been tasked by Captain Errol to retrieve vital resources from outer space to ensure the progress of the British Empire.
-                    Copper ore is the main interest, which is desperately needed for further electrifying the home world. Aside from that, the player needs to gather additional minerals, which help to
-                    manage the energy and oxygen consumption. When the amount of copper ore required to complete the quest is collected, it is possible to continue mining. However, gathering more or work faster is not always better:
-                    More mining means more wear on the rocket, less energy and oxygen reserve as well as a higher take-off weight. All these factors determine the probability whether the take-off is successfull and the player returns to the earth safely, or
-                    if the rocket explodes on take-off.
-                  </p>
-                  <p>
-                    <img src="https://raw.githubusercontent.com/vinzentp/Mission-Calypso/abgabe/pictures/mission-calypso_game-world_screenshot_marked_small.jpg" style="width: 100%;">
-                  </p>
-                  
-                  <img src="https://raw.githubusercontent.com/vinzentp/Mission-Calypso/abgabe/pictures/mission-calypso_game-popup_screenshot_small.jpg" style="width: 100%;">
-                  <p>
-                    The final version of the project is available <a href="https://github.com/vinzentp/Mission-Calypso/tree/abgabe">here</a>. This university project
-                    includes assets which the team has written permission to use for the educational purpose of the project only. Therefor, from a licensing point of view, consider 
-                    this project usable under the conditions of CC BY-NC-ND 4.0. 
-                    For the full experience including audio, one should set the browser to full screen mode and activate autoplay for the main html-file.
-                  </p>
-                </div>
               </div>
+              <div class="w3-container" id="MissionCalypso" style="display: none;">
+                  
+                  <p>
+                      During the university IT training, I participated in a course about html/css/JavaScript. For the final course assignment, I teamed up with three other
+                      students to create a real-time resource managment game situated in the fictious Victorian Space Age. Over the course of approximately six weeks, we created a feature complete minimal viable product,
+                      which we decided to name "Mission Calypso", after Saturn's moon where we set the background plot.</br>
+                      The player is acting as Commander Been, who has been tasked by Captain Errol to retrieve vital resources from outer space to ensure the progress of the British Empire.
+                      Copper ore is the main interest, which is desperately needed for further electrifying the home world. Aside from that, the player needs to gather additional minerals, which help to
+                      manage the energy and oxygen consumption. When the amount of copper ore required to complete the quest is collected, it is possible to continue mining. However, gathering more or work faster is not always better:
+                      More mining means more wear on the rocket, less energy and oxygen reserve as well as a higher take-off weight. All these factors determine the probability whether the take-off is successfull and the player returns to the earth safely, or
+                      if the rocket explodes on take-off.
+                  </p>
+                  <p>
+                      <img src="https://raw.githubusercontent.com/vinzentp/Mission-Calypso/abgabe/pictures/mission-calypso_game-world_screenshot_marked_small.jpg" style="width: 100%;">
+                  </p>
+                      <img src="https://raw.githubusercontent.com/vinzentp/Mission-Calypso/abgabe/pictures/mission-calypso_game-popup_screenshot_small.jpg" style="width: 100%;">
+                  <p>
+                      The final version of the project is available <a href="https://github.com/vinzentp/Mission-Calypso/tree/abgabe" target="_blank" rel="noopener noreferrer">here</a>. This university project
+                      includes assets which the team has written permission to use for the educational purpose of the project only. Therefor, from a licensing point of view, consider 
+                      this project usable under the conditions of Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0), 
+                      <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener noreferrer">https://creativecommons.org/licenses/by-nc-nd/4.0/</a>. 
+                      For the full experience including audio, one should set the browser to full screen mode and activate autoplay for the main html-file.
+                  </p>
+
+                  <div class="w3-row">
+                      <div class="w3-col m8 s12">
+                      <p>
+                          <form method="get" action="#MissionCalypso-top">
+                          <button class="w3-button w3-padding-large w3-white w3-border" type="submit" onclick="hideContentByID('MissionCalypso', 'MissionCalypso-collapsible')"><b>Show less</b></button>
+                          </form>
+                      </p>
+                      </div>
+                  </div>
+              </div>
+            </div>
 
 
           <!-- END BLOG ENTRIES -->
@@ -190,7 +213,7 @@
                 <p>
                     A visual overview of the programming languages, tools and hardware I have used for my projects. <br>
                     The majority of projects I do are scripted with Python. C/C++ I mostly use in conjunction with MCU's like Arduino&#x2122;, 
-                    wheras Lua plays an important role for my <a href="./typesetting.html">typesetting projects</a> (due to LuaLaTeX). <br>
+                    wheras Lua plays an important role for my <a href="./typesetting.html" target="_blank" rel="noopener noreferrer">typesetting projects</a> (due to LuaLaTeX). <br>
                     My primary use case for LabVIEW&#x2122; and html/css/JavaScript are scientific instrument control and laboratory-life-improvement tools.<br>
                     For experiments with Linux, servers, telephone networks and hardware control, Raspberry Pi&#x2122; is the SBC of my choice. <br>
                     Projects involving graphics, cross-platform GUI and video games I like to tackle with the Godot Engine.
@@ -233,11 +256,15 @@
       <!-- Footer -->
       <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
         <p>
-            <a href="../index.html">Home</a> <a href="./imprint.html">Imprint</a> <a href="./privacy.html">Privacy</a></br>
-            GitHub Repositories: <a href="https://github.com/d-sacre/">https://github.com/d-sacre/</a> <br>
-            Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
+            <a href="../index.html">Home</a> <a href="./imprint.html" target="_blank" rel="noopener noreferrer">Imprint</a> <a href="./privacy.html" target="_blank" rel="noopener noreferrer">Privacy</a></br>
+            GitHub Repositories: <a href="https://github.com/d-sacre/" target="_blank" rel="noopener noreferrer">https://github.com/d-sacre/</a> <br>
+            Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" rel="noopener noreferrer">w3.css</a>, 
+            Syntax Highlighting by <a href="https://highlightjs.org/" target="_blank" rel="noopener noreferrer">highlight.js</a>
         </p>
       </footer>
 
   </body>
+
+  <!--Include script for collapsible content-->
+  <script src="./js/collapsible.js"></script>
 </html>
