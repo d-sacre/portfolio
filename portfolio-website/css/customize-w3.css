@@ -37,9 +37,24 @@ div.active h5:after{
  }
    */
 
+@media screen {
+    .screen-image-scale{
+        width:100%; 
+        padding: 10px;
+    }
+}
+
 @media print{
     .noprint{
         display:none;
+    }
+
+    .print-image-scale{
+        width: 50%;
+    }
+
+    @page { 
+        size: portrait;
     }
  }
  
