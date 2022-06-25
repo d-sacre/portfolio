@@ -1,0 +1,6 @@
+License for all files (except DS logo and Terminal): Creative Commons CC0 
+https://commons.wikimedia.org/wiki/File:Paint_Brush_-_The_Noun_Project.svg
+https://commons.wikimedia.org/wiki/File:Typewriter132.svg
+
+MIT, SIL Open Font License:
+https://commons.wikimedia.org/wiki/File:Octicons-terminal.svg
