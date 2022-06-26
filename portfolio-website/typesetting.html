@@ -4,6 +4,7 @@
   <title>Typesetting Portfolio</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="./img/typewriter_edited.png">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 
@@ -32,7 +33,7 @@
             <p>
                 This webpage is a collection of my typesetting-related projects I have been working on since 2013. </br>
                 Most of the files are available in the associated github-repository: 
-                <a href="https://github.com/d-sacre/portfolio">https://github.com/d-sacre/portfolio</a>. </br>
+                <a href="https://github.com/d-sacre/portfolio" target="_blank" rel="noopener noreferrer">https://github.com/d-sacre/portfolio</a>. </br>
                 If files are stored on an external server (e. g. a server of a publisher), 
                 I will provide the link to the original source.
             </p>
@@ -45,7 +46,7 @@
               <p>
                 If not stated otherwise, all the content on this webpage is licensed under
                 Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0), 
-                <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">https://creativecommons.org/licenses/by-nc-nd/4.0/</a>.
+                <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener noreferrer">https://creativecommons.org/licenses/by-nc-nd/4.0/</a>.
               </p>
             </div>
           </div>
@@ -77,7 +78,7 @@
                     In the end, I summarized as much of the settings as possible into a class file in order to prevent the main LaTeX file 
                     from getting too cluttered. The final main code structure I settled on is shown in the following code listing:
                     <pre style="margin-top: 1px; margin-bottom: 1px">
-                    <code class="language-latex">
+                    <code class="language-latex" style="padding-top: 0px; padding-bottom: 0px;">
 % !TeX program = lualatex
 
 \documentclass{minimalcv}
@@ -120,10 +121,10 @@
                     </div>
                     For the little amount of code I had to write (minimalcv.cls: 366 lines including comments), the resulting document looks visually pleasing.
                     Perfomance wise, it needs some improvement (compilation takes a bit long) and not all options can be easily changed (yet). For those
-                    who are interested, the proof-of-concept version of this project is available at <a href="https://github.com/d-sacre/latex-minimalcv">https://github.com/d-sacre/latex-minimalcv</a> under 
-                    the <a href="http://www.latex-project.org/lppl/">LaTeX Project Public License Version 1.3c</a>.
+                    who are interested, the proof-of-concept version of this project is available at <a href="https://github.com/d-sacre/latex-minimalcv" target="_blank" rel="noopener noreferrer">https://github.com/d-sacre/latex-minimalcv</a> under 
+                    the <a href="http://www.latex-project.org/lppl/" target="_blank" rel="noopener noreferrer">LaTeX Project Public License Version 1.3c</a>.
                   </p>
-                  <div class="w3-row">
+                  <div class="w3-row noprint">
                     <div class="w3-col m8 s12">
                       <p>
                         <form method="get" action="#minimalcv-top">
@@ -139,18 +140,216 @@
             <div class="w3-card-4 w3-margin w3-white" id="docART-top">
               <div class="w3-container collapsible" id="docART-collapsible">
                 <h3><b>docART: A utility for semi-automated pdf documentation generation</b></h3> <!--&#11163;-->
-                <h5><span class="w3-opacity">Last Update: June 21, 2022</span></h5>
+                <h5><span class="w3-opacity">Last Update: June 26, 2022</span></h5>
               </div>
-              <div class="w3-container "  id="docART" style="display: none;">
+              <div class="w3-container"  id="docART" style="display: none;">
                 <p>
-                  The project is available at
-                  <a href="https://github.com/d-sacre/docart-documentation-utility">https://github.com/d-sacre/docart-documentation-utility</a> 
-                  under 
-                  <a href="https://www.gnu.org/licenses/gpl-3.0.txt">GNU Public License (GPL-3.0)</a>. 
-                  Please note that the backend is comprised of many other projects, all of which have their own license agreement. <br>
-                  Special thanks to the project's co-developer <a href="https://github.com/MartinStimpfl">Martin Stimpfl</a> for the inital idea and support throughout the whole project. 
+                  Typesetting has been a complicated subject for centuries. In science, especially mathematics, many symbols are unique to the subject and bear little to no resemblance with standard
+                  Latin letters. This meant for typesetting a mathematical text, special typewriters were mandatory. With the advent of computers, the challenge of how to interface with them for typesetting
+                  purposes, format (“What You See Is What You Get” (WYSIWYG) versus “What You See Is
+                  What You Want” (WYSIWYW)) and in the end print text shifted the complexity to an even higher level.<br>
+                  My first contact with professional, scientific typesetting was 2013. During my studies, I had to write many protocols and two theses. 
+                  Their requirements regarding scientific notation made LaTeX basically a necessity. Sometimes LaTeX was very frustrating, especially when for seemingly simple task
+                  turned out to be a rabbit hole. However, over the course of my academic career, I encountered so many issues with Microsoft Word/PowerPoint like
+                  encoding/font issues (colleagues with different operating system locales and Microsoft Office installations), unexplicable layout bugs (e.g. font turns semi-bold in part of the document for no reason and cannot be reset),
+                  version control not working properly, etc.. 
+                  Additionally, there are all the troubles arising from Microsoft Word originally being designed for office work and still not having implemented 
+                  all the typographical standards for scientific typesetting.  Despite all the LaTeX shortcommings I encountered, these issues made me
+                  really appreciative for the benefits of WYSIWYW tools like LaTeX. Still, the LaTeX learning curve is very, very steep and one has to write every routine/template by oneself.
+                  This is very problematic for beginners, but also frustrating for advanced users, which I found out whilst trying to automatize a documentation I had to write. 
                 </p>
-                <div class="w3-row">
+                <p>
+                  In August 2021, a friend of mine suggested trying to design a semi-automated utility for documenting software/hardware development. He had
+                  experienced similar issues in industry as I had in academia and wanted to see whether LaTeX could be a solution. <br>
+                  As design parameters, we decided to focus on:
+                  <ul>
+                    <li>
+                      Automatic source code inclusion for code listings (code presented in documentation always up-to-date),
+                    </li>
+                    <li>
+                      Templates to facilitate tedious tasks like image inclusion, tables, etc.,
+                    </li>
+                    <li>
+                      Full support for version control (via git),
+                    </li>
+                    <li>
+                      Co-authors should be able to work on different parts seperately and afterwards being able to merge into one document,
+                    </li>
+                    <li>
+                      Everything should be achievable within one program/script (no export/re-import),
+                    </li>
+                    <li>
+                      Usage of a master theme (not user editable, only by documentation responsible) with the possibility 
+                      for inclusion of end user options, 
+                    </li>
+                    <li>
+                      User friendly (little to no LaTeX knowledge required),
+                    </li>
+                    <li>
+                      Import/include options for external tools like e.g. doxygen,
+                    </li>
+                    <li>
+                      Minimal amount of external tools which have to be installed besides the LaTeX backend,
+                    </li>
+                    <li>
+                      Cross-platform capability.
+                    </li>
+                  </ul> 
+                  </p>
+
+                <h5><b>Challenges during development</b></h5>
+                  <p>
+                    Eventhough it might have been possible to achieve all of that with plain pdflatex via the mighty, but complicated and not well documented LaTeX3 backend,
+                    we decided from the start to use LuaLaTeX. If done properly, this does have any affect at all for the end user;
+                    the LaTeX code is identical to pdflatex, as long as one does not choose to use the Lua features. The main benefit of the LuaLaTeX backend is that any 
+                    system font or otf/ttf font file can be loaded, which makes it more convenient for the end user to customize the document theme.
+                    For us, the developers, it meant that we could use a powerful scripting language whilst the LaTeX compilation process, which we thought could eliminate the
+                    need for shell-escape. However, it soon became apparent that despite all the claims stating Lua of LuaLaTeX has the same functionality as the standalone Lua interpreter,
+                    there were huge differences. Simple routines available in the Lua standalone as standard did not work as they should have. On the other hand,
+                    additional functionality which was neither documented in the Lua standalone documentation nor the LuaLaTeX handbook was available. In the end, the Lua way of doing things
+                    (especially strings, tables and the non-existent proper regex functionality) meant, that we had to bite the bullet and include Python via shell-escape. We did try to avoid
+                    this since (permanent) shell-escape is considered a severe security risk and therefor might render this tool unusable for industrial application.
+                  </p>
+                  <p>
+                    As much as the inclusion of Python was the only way to create a working prototype, it almost ended the project the same time.
+                    It was planned to let the Python script return values to LaTeX, which than would be further processed within a LaTeX macro.
+                    After a lot of fiddeling, returning the value from Python to LaTeX worked as long as LuaLaTeX only had to print it to the pdf or
+                    LuaLaTeX command line. The needed functionality of storing it into a LaTeX macro for further processing could not be implemented.
+                    Since at the time no stable solution could be found, we decided to store the processed data into a file. The filename would be
+                    calculated in Python with a hashing function. To access the same data in LuaLaTeX, an identical hasing function has been
+                    implemented in Lua (although this meant to important a huge Lua hash library which was totally overkill for this task), which
+                    allowed to derive the correct filename within the LuaLaTeX ecosystem. With the proper filename determined, the data could now be
+                    loaded from the file into LuaLaTeX and be further processed. 
+                  </p>
+                  <p>
+                    In early December 2021, after a circa two month long break from development, we were confident that an alpha-release version
+                    of the utility could be released in January 2022. We started cleaning the project, deciding which features are required for a 
+                    minimal viable product and which ones we would like to implement later. Around this time, we finalized the project name/catch phrase to be
+                    "docART – the Art of Documentation". The desired release date was a bit optimistic, but doable. However, the 
+                    LuaLaTeX update from December 31, 2021, which was included in the first texlive 2022 release, changed something about
+                    the way LuaLaTeX handled shell-escape in the background. Until this day, we do not know exactly what happened; only 
+                    our somewhat hacked shell-escape enabling workaround was causing the compilation to crash and therefor not producing a valid pdf output.
+                    The shell-escape workaround could relatively easily be replaced with a more guideline conform, secure one. Unfortunately, in a chain 
+                    reaction, other modules we have written started now to fail. Especially tedious was the overhaul of the automatic table inclusion from
+                    external files. This was tricky even before the LuaLaTeX update and fixing the new bugs was extremly time consuming. We tried literally
+                    all the available LaTeX table packages in various combinations with Lua scripts. Three out of the four times we thought to have a good,
+                    working solution when suddenly, after days of work, a new, even harder to fix bug occured. In the end, we managed to find a solid solution.
+                    However, a trade-off between functionality and user comfort had to be made. Unfortunately, this holds true for the majority of the
+                    design parameters, but at least on April 30, 2022, we could release the first prototype to the public.   
+                    The main goal of this project was to provide user friendly solution for inclusion of images, tables and source code listing in a LaTeX document.
+                    In the end, we achieved that kind of with the prototype. 
+                  </p>
+                  
+                <h5><b>Image inclusion</b></h5>
+                  Multiple images can simply be included by calling:
+                  <pre style="margin-top: -10px; margin-bottom: -20px">
+                    <code class="language-latex" style="padding-top: 0px; padding-bottom: 0px;">
+\daFigureDefaultCaptionBelow[OPTIONS]{
+  PATH/TO/IMG1;
+  PATH/TO/IMG2;
+  ...
+  PATH/TO/IMGN;
+}{LABEL}{CAPTION}
+                    </code>
+                  </pre>
+                  This will automatically create a LaTeX figure with N images layouted to the default specifications or the OPTIONS in the optional argument. 
+                  For example, specifying the option "grid=2x4" and providing file paths for N = 7 would generate the following figure: <br>
+                  <img src="./img/docART_figure-screenshot.png"> <br>
+                  The docART Utility automatically adapts the layout for missing/surplus specified file paths and additionally reliefs the writer from 
+                  needing to worry about setting LaTeX labels and captions properly. 
+
+                <h5><b>Table from file</b></h5>
+                  A similar approach was chosen for automatic inclusion and formatting of tables from files. The macro 
+                  <pre style="margin-top: -10px; margin-bottom: -20px">
+                    <code class="language-latex" style="padding-top: 0px; padding-bottom: 0px;">
+\daTableDefaultFancyCaptionBelow[COLALIGN]{FILEPATH}{LABEL}{CAPTION}
+                    </code>
+                  </pre>
+                  will for example transform the following csv-file
+                  <pre style="margin-top: -10px; margin-bottom: -20px">
+                    <code class="language-latex" style="padding-top: 0px; padding-bottom: 0px;">
+module,PSL,license
+os,yes,PSF
+sys,yes,PSF
+re,yes,PSF
+time,yes,PSF
+hashlib,yes,PSF
+xml.etree.ElementTree,yes,PSF
+csv,yes,PSF
+                    </code>
+                  </pre>
+                  to the nicely formatted table with highlighted header and odd rows. <br>
+                  <img src="./img/docART_table-screenshot.png"> <br>
+                  The COLALIGN option allows to specify the alignment of the column content (l = left, r = right, c = center). If no alignment
+                  or less values than actual columns are specified, the alignment will default to left. Another feature to make the LaTeX table 
+                  backend more user friendly is the automatic page break with repeated captions.  
+
+                <h5><b>Source code listing from file</b></h5>
+                  The automatic source code listing feature that sparked the idea for the whole project was implemented as follows:
+                  <pre style="margin-top: -10px; margin-bottom: -20px">
+                    <code class="language-latex" style="padding-top: 0px; padding-bottom: 0px;">
+\daListingCaptionBelow[OPTIONS]{FILE}{TAG}{LABEL}{CAPTION}
+                    </code>
+                  </pre>
+                  The specified FILE will be checked for changes during each LuaLaTeX compilation of the document. When changes have occured, the source 
+                  code that will be included into the pdf will be automatically updated.<br>
+                  Sometimes it is desirable not to include the complete source file, but only part of it. This can be done by 
+                  specifying the TAG (default style: +++TAG+++) at least twice within a comment in the source file 
+                  (similar to a doxygen comment). The content between the two matching tags will be included into the pdf, whereas
+                  all other occuring tags and the rest of the content will be ignored.<br>
+                  As an example, the following "Hello World" program written in C++ <br>
+                  <pre style="margin-top: -10px; margin-bottom: -20px">
+                    <code class="language-c++" style="padding-top: 0px; padding-bottom: 0px;">
+// Requires C++ 17 or higher
+
+#include <iostream>
+#include <ctime>
+
+int main() {
+    std::time_t result = std::time(nullptr); 
+    std::cout << "Hello World, it is " << std::asctime(std::localtime(&result));
+    return 0;
+}
+                    </code>
+                  </pre>
+                  will be typeset like this: <br>
+                  <img src="./img/docART_listing-screenshot.png"> <br>
+                  The syntax highlighting can be changed by:
+                  <pre style="margin-top: -10px; margin-bottom: -20px">
+                    <code class="language-latex" style="padding-top: 0px; padding-bottom: 0px;">
+\lstset{style=STYLE}
+                    </code>
+                  </pre>
+                  Besides the visible line separation in the listing background (which only some pdf readers do show), the
+                  biggest flaw is that all the synatx highlighting styles have to be changed/defined manually by the user.
+                  The current LaTeX backend would support hundreds of languages/dialects, but does not provide the necessary
+                  styles. 
+
+                <h5><b>Conclusion and outlook</b></h5>
+                  <p>
+                    Overall, the project was way more difficult than anticipated. In the end, condensing the generality of LaTeX
+                    into one semi-automatic template did not work out. LaTeX is simply not designed for this; the users are expected
+                    to write their own custom, very specific macros. It seems like docART follows the TeX tradition of being just 
+                    another macro compilation: LaTeX is a TeX macro collection to make working with TeX easier; in the same sense,
+                    docART is a LaTeX macro collection to make life with LaTeX easier. 
+                  </p>
+                  <p>
+                    However, the prototype turned out to be a promising proof-of-concept. It might not be the general template we hoped
+                    to create in the beginning, but it has some interesting and effective solutions. As much as the LuaLaTeX update has
+                    set back the project, it also forced us to re-think everything, which in the end resulted in a way more mature prototype.
+                    Actually, the alpha-2022-04-30 is in a state that a lot of the desired features now could be implemented. Perhaps we
+                    might revisit the project one day and try to push the limits of user friendliness further.
+                  </p>
+                  <p>
+                    The project is available at
+                    <a href="https://github.com/d-sacre/docart-documentation-utility" target="_blank" rel="noopener noreferrer">https://github.com/d-sacre/docart-documentation-utility</a> 
+                    under 
+                    <a href="https://www.gnu.org/licenses/gpl-3.0.txt" target="_blank" rel="noopener noreferrer">GNU Public License (GPL-3.0)</a>. 
+                    Please note that the backend is comprised of many other projects, all of which have their own license agreement. <br>
+                    Special thanks to the project's co-developer <a href="https://github.com/MartinStimpfl" target="_blank" rel="noopener noreferrer">Martin Stimpfl</a> for the inital idea and support throughout the whole project. 
+                  </p>
+
+                <div class="w3-row noprint">
                   <div class="w3-col m8 s12">
                     <p>
                       <form method="get" action="#docART-top">
@@ -170,20 +369,20 @@
           <div class="w3-col l4">
             <!-- About Card -->
             <div class="w3-card w3-margin w3-margin-top">
-              <img src="../TeX/tikz/simple-tikz-example/simple-tikz-example_bitmap.png" style="width:100%; padding: 10px;"> </img> <!--https://github.com/d-sacre/portfolio/blob/main/TeX/tikz/compass-rose/compass-rose_web.png--><!--/TeX/tikz/compass-rose/-->
+              <img class="screen-image-scale print-image-scale" src="../TeX/tikz/simple-tikz-example/simple-tikz-example_bitmap.png"> </img>
               <div class="w3-container w3-white">
                 <h4><b>Squaring the circle</b></h4>
                 <p>
                   Squaring the circle with LaTeX is very simple: Just use nodes with shapes and specify the number of the polygon sides. To spice it all up,
                   add some color. Works with plain LaTeX; no Lua, expl3 or (much) pgf needed. Just a \foreach loop and the classic LaTeX counter. Source code 
-                  available <a href="../TeX/tikz/simple-tikz-example/simple-tikz-example.tex">here</a>. </br>
-                  License: <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.en">Creative Commons Zero (CC0 1.0)</a>.
+                  available <a href="../TeX/tikz/simple-tikz-example/simple-tikz-example.tex" target="_blank" rel="noopener noreferrer">here</a>. </br>
+                  License: <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.en" target="_blank" rel="noopener noreferrer">Creative Commons Zero (CC0 1.0)</a>.
                 </p>
               </div>
             </div><hr>
           
             <!-- Labels / tags -->
-            <div class="w3-card w3-margin">
+            <div class="w3-card w3-margin noprint">
               <div class="w3-container w3-padding">
                 <h4>Tags</h4>
               </div>
@@ -209,12 +408,12 @@
       </div>
 
       <!-- Footer -->
-      <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+      <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top noprint">
         <p>
-            <a href="../index.html">Home</a> <a href="./imprint.html">Imprint</a> <a href="./privacy.html">Privacy</a></br>
-            GitHub Repositories: <a href="https://github.com/d-sacre/">https://github.com/d-sacre/</a> <br>
-            Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>, 
-            Syntax Highlighting by <a href="https://highlightjs.org/">highlight.js</a>
+            <a href="../index.html">Home</a> <a href="./imprint.html" target="_blank" rel="noopener noreferrer">Imprint</a> <a href="./privacy.html" target="_blank" rel="noopener noreferrer">Privacy</a></br>
+            GitHub Repositories: <a href="https://github.com/d-sacre/" target="_blank" rel="noopener noreferrer">https://github.com/d-sacre/</a> <br>
+            Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" rel="noopener noreferrer">w3.css</a>, 
+            Syntax Highlighting by <a href="https://highlightjs.org/" target="_blank" rel="noopener noreferrer">highlight.js</a>
         </p>
       </footer>
 
