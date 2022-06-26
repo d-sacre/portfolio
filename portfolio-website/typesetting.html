@@ -310,12 +310,11 @@ csv,yes,PSF
                     <code class="language-c++" style="padding-top: 0px; padding-bottom: 0px;">
 // Requires C++ 17 or higher
 
-#include <iostream>
-#include <ctime>
-
+#include &lt;iostream&gt;
+#include &lt;ctime&gt;
 int main() {
     std::time_t result = std::time(nullptr); 
-    std::cout << "Hello World, it is " << std::asctime(std::localtime(&result));
+    std::cout &lt;&lt; &quot; Hello World, it is &quot; &lt;&lt; std::asctime(std::localtime(&amp;result));
     return 0;
 }
                     </code>
