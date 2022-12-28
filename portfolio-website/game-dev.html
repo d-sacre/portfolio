@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+
+  <title>Game Development Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="./img/joy-stick.png">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+  <style>
+      body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+  </style>
+
+  <style>
+    .mySlides {display:none;}
+  </style>
+
+  <!--expand and hide content-->
+  <script src="./js/expand-and-hide-content.js"></script>
+  <link rel="stylesheet" href="./css/customize-w3.css">
+
+  <body class="w3-light-grey">
+
+      <!-- w3-content defines a container for fixed size centered content, 
+      and is wrapped around the whole page content, except for the footer in this example -->
+      <div class="w3-content" style="max-width:1400px">
+
+          <!-- Header -->
+          <header class="w3-container w3-center w3-padding-32"> 
+            <h1><b>GAME DEVELOPMENT PORTFOLIO</b></h1>
+            <p>
+                This webpage is a collection of my game development projects I have been working on since 2013. </br>
+                Most files are available in the associated github-repository: 
+                <a href="https://github.com/d-sacre/portfolio" target="_blank" rel="noopener noreferrer">https://github.com/d-sacre/portfolio</a>. </br>
+                If files are stored on an external server (e. g. a server of a publisher), 
+                I will provide the link to the original source.
+            </p>
+          </header>
+
+          <!--Licensing information-->
+          <div class="w3-card-4 w3-margin w3-white">
+            <div class="w3-container">
+            <h3>LICENSING</h3>
+              <p>
+                If not stated otherwise, all the content on this webpage is licensed under
+                Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0), 
+                <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener noreferrer">https://creativecommons.org/licenses/by-nc-nd/4.0/</a>.
+              </p>
+            </div>
+          </div>
+
+
+          <!-- Grid -->
+          <div class="w3-row">
+
+          <!-- Blog entries -->
+          <div class="w3-col l8 s12">
+            <!-- Blog entry MissionCalypso-->
+            <div class="w3-card-4 w3-margin w3-white" id="MissionCalypso-top">
+              <div class="w3-container collapsible" id="MissionCalypso-collapsible">
+                  <h3><b>Mission Calypso: A html/ccs/JavaScript game as a university project</b></h3>
+                  <h5><span class="w3-opacity">Last Update: February 3, 2022</span></h5>
+              </div>
+              <div class="w3-container" id="MissionCalypso" style="display: none;">
+                  
+                  <p>
+                      During the university IT training, I participated in a course about html/css/JavaScript. For the final course assignment, I teamed up with three other
+                      students to create a real-time resource managment game situated in the fictious Victorian Space Age. Over the course of approximately six weeks, we created a feature complete minimal viable product,
+                      which we decided to name "Mission Calypso", after Saturn's moon where we set the background plot.</br>
+                      The player is acting as Commander Been, who has been tasked by Captain Errol to retrieve vital resources from outer space to ensure the progress of the British Empire.
+                      Copper ore is the main interest, which is desperately needed for further electrifying the home world. Aside from that, the player needs to gather additional minerals, which help to
+                      manage the energy and oxygen consumption. When the amount of copper ore required to complete the quest is collected, it is possible to continue mining. However, gathering more or work faster is not always better:
+                      More mining means more wear on the rocket, less energy and oxygen reserve as well as a higher take-off weight. All these factors determine the probability whether the take-off is successfull and the player returns to the earth safely, or
+                      if the rocket explodes on take-off.
+                  </p>
+                  <p>
+                      <img src="https://raw.githubusercontent.com/vinzentp/Mission-Calypso/abgabe/pictures/mission-calypso_game-world_screenshot_marked_small.jpg" style="width: 100%;">
+                  </p>
+                      <img src="https://raw.githubusercontent.com/vinzentp/Mission-Calypso/abgabe/pictures/mission-calypso_game-popup_screenshot_small.jpg" style="width: 100%;">
+                  <p>
+                      The final version of the project is available <a href="https://github.com/vinzentp/Mission-Calypso/tree/abgabe" target="_blank" rel="noopener noreferrer">here</a>. This university project
+                      includes assets which the team has written permission to use for the educational purpose of the project only. Therefor, from a licensing point of view, consider 
+                      this project usable under the conditions of Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0), 
+                      <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener noreferrer">https://creativecommons.org/licenses/by-nc-nd/4.0/</a>. 
+                      For the full experience including audio, one should set the browser to full screen mode and activate autoplay for the main html-file.
+                  </p>
+
+                  <div class="w3-row noprint">
+                      <div class="w3-col m8 s12">
+                      <p>
+                          <form method="get" action="#MissionCalypso-top">
+                          <button class="w3-button w3-padding-large w3-white w3-border" type="submit" onclick="hideContentByID('MissionCalypso', 'MissionCalypso-collapsible')"><b>Show less</b></button>
+                          </form>
+                      </p>
+                      </div>
+                  </div>
+              </div>
+            </div>
+
+            <!-- Blog entry raccoonteur-->
+            <!--            
+            <div class="w3-card-4 w3-margin w3-white" id="raccoonteur-top">
+              <div class="w3-container collapsible" id="raccoonteur-collapsible">
+                  <h3><b>The Raccoonteur: A Godot Game for the Pacifist Jam (Honest Jam IV)</b></h3>
+                  <h5><span class="w3-opacity">Last Update: December 24, 2022</span></h5>
+              </div>
+              <div class="w3-container" id="raccoonteur">
+                  <p>
+                    This project came into existence by coincidence: After having tinkered with several game ideas in Godot, 
+                    I had not finished one of them. A game jam seemed to be a good idea to force me to complete a project in 
+                    a timely manner. Whilst scrolling through the list of jams on itch.io, I stumbled across the <a href="https://itch.io/jam/honest-jam-4" target="_blank" rel="noopener noreferrer">Pacifist Jam (Honest Jam IV)</a>.
+                    The theme of the jam was simple: Make a game without violence as core game play mechanic. Basically, that was the task, no further
+                    restrictions or limitations. 
+                  </p>
+
+                  <h4>Concept</h4>
+                    <p>
+                      My first idea was to make a detective game with black and white visuals in a film noir style with a Jazz noir soundtrack.  
+                      Since I joined the jam two days late and there were no suitable pre-made assets available, I needed to find another topic.
+                      During my search for a suitable, well animated 2D character, I came across the cute stylized raccoon, which made me think 
+                      about a game running around floating houses on clouds in a fairytale world way up in the sky. Again, the amount of available pre-made assets
+                      fitting the art style of the raccoon character was too limited; the remaining time and my lacking art skills prevented me from exploring
+                      this idea further. So I settled on a conventional, non-innovative approach of a sidescrolling platformer, but added some twists to make it fit the pacifistic theme and more interesting.
+                    </p>
+                    <p>
+                      A conventional platformer usually involves some form of combat or stylized violence like jumping on enemies etc. as core game play mechancis, 
+                      which was absolutely forbidden by the rules of the jam. My idea was to focus more on story and gathering items. To make it more interesting and
+                      challenging for the player, collecting too many items (greed) or not enough (laziness) will lead to a penalty score at the end of the level. However,
+                      the exact penalty is not revealed to the player until after the level is completed, which leaves the player to choose a tactic without knowing if it will pay off in the end.
+                      Still, this felt not enough challenging, so I added an impact of the inventory on the players' abilities: Depending on the amount of items in the inventory,
+                      the maximum speed, jump height and upper height limits of moving platforms would decrease, so that certain regions of the level might not be reachable anymore. 
+                      Giving the player the ability to dump the complete inventory (which is considered littering and therefor will be penalized at the end of the level) to restore the original
+                      players' abilities adds another layer to the required strategic planning. 
+                    </p>
+                    <p>
+                      As for the story, I decided to keep it simple: A young raccoon is destined to become the successor of his grandfather, who is the guardian of stories.
+                      To show that he is ready for the task, he has to collect the required ingredients for the inaugural dinner. At first glance it seems that this quest is just a ritual, but it allows for the possibility to explore the subject that 
+                      stories or tales are not necessarily static over time: They could change due to experiences, changes in the environment or social structure, etc. or simply told differently due to the desire of artistic self-expression. 
+                      Another very interesting concept to explore is to show that even extremely fictitious fairy tales could have a real-life value which is at first not obvious, until oneself experiences a real-life situation similar to the one told in the story. 
+                      For example in this game, I tried to use the collecting trash mechanic and the reference to viral tourism in this context.
+                    </p>
+                    <p>
+                      After having the idea for the story, I needed to come up with a title for the game:
+                      How should a game telling the story of a racoon guarding ancient stories be called? By chance, I remembered
+                      an American English synonym for story teller: "raconteur". Mix this with "raccoon", the animal, and one obtains 
+                      a mysterious title for the uninformed, but also perfectly descriptive one: "The Raccoonteur".
+                    </p>
+                    <figure>
+                      <img src="../game-dev/raccoonteur/the-raccoonteur_menu_screenshot.png" style="width: 90%; padding-left: 10%;">
+                    </figure>
+                    
+
+                  <h3>Design Goals</h3>
+                    
+                    <ul>
+                      <li>
+                        Game Type: Sidescrolling platformer with focus on inventory management and story telling,
+                      </li>
+                      <li>
+                        Art Style: cute cartoon/stylized style with vibrant colors, 
+                      </li>
+                      <li>
+                        Introduction of the player via an interactive tutorial,
+                      </li>
+                    </ul>
+
+                  <h3>Development</h3>
+                    <p>
+                      Since I was joining the jam late, I immediately started developing, which in hindsight was not a good idea and 
+                      let to many problems along the way. The 2D part of Godot is relatively straight forward, so I could create an animated character
+                      who could move around the world very quickly. After adding some collision shapes to the test scene, it was time to test jumping, falling,
+                      colliding and walking mechanincs in more details. It turned out that the way the character sprite was designed created some issues:
+                      The fur on the face made another collision shape necessary to prevent the player from clipping through walls. This in turn led to problems
+                      while the character would fall in e. g. a narrow tunnel (because the fur collision shape would prevent the fall). The logic to solve this problem
+                      turned out to be to complicated, so I had to accept this "feature" and trying to compensate with a careful level design.
+                    </p>
+                    <p>
+                      Another, a lot more problematic issue, was the gravity and how the player would interact with the trash objects. 
+                    </p>
+                      
+                  
+                  <h3>Result</h3>
+                    <p>
+                      The game starts with a tutorial level, where the basic story and game play mechanics are explained. Step by step, the user interface
+                      and game play mechanics are introduced. At the end, the player gets the quest outlined by an NPC and a new, incomplete snippet of the story.
+                    </p>
+
+                    <div class="w3-content w3-display-container">
+                      <div class="w3-display-container mySlides">
+                        <img src="../game-dev/raccoonteur/the-raccoonteur_tutorial_screenshot1.png" style="width: 100%;">
+                        <div class="w3-container w3-padding-16 w3-opacity w3-dark-grey">
+                            First screen of the tutorial level: An introduction to the basic story.
+                        </div> 
+                      </div>
+                      
+                      <div class="w3-display-container mySlides">
+                        <img src="../game-dev/raccoonteur/the-raccoonteur_tutorial_screenshot2.png" style="width: 100%;">
+                        <div class="w3-container w3-padding-16 w3-opacity w3-dark-grey">
+                            Start of the tutorial with game play instructions and stepwise introduction to UI.
+                        </div>
+                      </div>
+                      
+                      <div class="w3-display-container mySlides">
+                          <img src="../game-dev/raccoonteur/the-raccoonteur_tutorial_screenshot3.png" style="width: 100%;">
+                          <div class="w3-container w3-padding-16 w3-opacity w3-dark-grey">
+                              After completion of the tutorial, the player receives the quest by a NPC.
+                          </div>
+                      </div>
+                      
+                      <div class="w3-display-container mySlides">
+                          <img src="../game-dev/raccoonteur/the-raccoonteur_tutorial_screenshot4.png" style="width: 100%;">
+                          <div class="w3-container w3-padding-16 w3-opacity w3-dark-grey">
+                              After accepting the quest, a new story fragment is presented.
+                          </div>
+                      </div>
+                      
+                      <div class="w3-display-container mySlides">
+                        <img src="../game-dev/raccoonteur/the-raccoonteur_valley-of-the-bats_screenshot1.png" style="width: 100%;">
+                        <div class="w3-container w3-padding-16 w3-opacity w3-dark-grey">
+                            At the start of the first level, the quest is outlined by a NPC.
+                        </div>
+                      </div>
+
+                      <div class="w3-display-container mySlides">
+                        <img src="../game-dev/raccoonteur/the-raccoonteur_valley-of-the-bats_screenshot2.png" style="width: 100%;">
+                        <div class="w3-container w3-padding-16 w3-opacity w3-dark-grey">
+                            After the player accepted the quest, items can be gathered; some of them are hidden.
+                        </div>
+                      </div>
+
+                      <div class="w3-display-container mySlides">
+                        <img src="../game-dev/raccoonteur/the-raccoonteur_valley-of-the-bats_screenshot3.png" style="width: 100%;">
+                        <div class="w3-container w3-padding-16 w3-opacity w3-dark-grey">
+                            After collecting enough edible mushrooms/trash, the player's performance is evaluated ...
+                        </div>
+                      </div>
+
+                      <div class="w3-display-container mySlides">
+                        <img src="../game-dev/raccoonteur/the-raccoonteur_valley-of-the-bats_screenshot4.png" style="width: 100%;">
+                        <div class="w3-container w3-padding-16 w3-opacity w3-dark-grey">
+                            ... and the next fragment of the story gets presented.
+                        </div>
+                      </div>
+                      
+                      <button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
+                      <button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
+                      
+                    </div>
+                  -->
+
+                    <!--
+                    <figure>
+                      <img src="../game-dev/raccoonteur/the-raccoonteur_tutorial_screenshot1.png" style="width: 100%; margin-top: 10px; margin-bottom: 10px;">
+                      <figcaption>
+                          First screen of the tutorial level: An introduction to the basic story. 
+                      </figcaption>
+                    </figure>
+                    
+                    <figure>
+                      <img src="../game-dev/raccoonteur/the-raccoonteur_tutorial_screenshot2.png" style="width: 100%; margin-top: 10px; margin-bottom: 10px;">
+                    </figure>
+
+                    <figure>
+                        <img src="../game-dev/raccoonteur/the-raccoonteur_tutorial_screenshot3.png" style="width: 100%; margin-top: 10px; margin-bottom: 10px;">
+                    </figure>
+
+                    <figure>
+                        <img src="../game-dev/raccoonteur/the-raccoonteur_tutorial_screenshot4.png" style="width: 100%; margin-top: 10px; margin-bottom: 10px;">
+                    </figure>
+
+                    <figure>
+                        <img src="../game-dev/raccoonteur/the-raccoonteur_valley-of-the-bats_screenshot.png" style="width: 100%; margin-top: 10px; margin-bottom: 10px;">
+                    </figure>
+
+                    <figure>
+                        <img src="../game-dev/raccoonteur/the-raccoonteur_valley-of-the-bats_screenshot2.png" style="width: 100%; margin-top: 10px; margin-bottom: 10px;">
+                    </figure>
+
+                    <figure>
+                        <img src="../game-dev/raccoonteur/the-raccoonteur_valley-of-the-bats_screenshot3.png" style="width: 100%; margin-top: 10px; margin-bottom: 10px;">
+                    </figure>
+
+                    <figure>
+                      <img src="../game-dev/raccoonteur/the-raccoonteur_valley-of-the-bats_screenshot4.png" style="width: 100%; margin-top: 10px; margin-bottom: 10px;">
+                    </figure>
+
+                  -->
+                  <!--
+                  <h3>Lessons Learned</h3>
+                    <h5>(1) Art for Jam should allow Simple Collision Shapes</h5>
+                      <p>design or select art for a jam which allows simple collision shapes</p>
+
+                    <h5>(2) Design and Document Collision Layers</h5>
+                      <p>design and document beforehand what object is on what collision layer and what behaviour can be triggered</p>
+                    
+                    <h5>(3) Make/Perform as much of the Art/Sprite Scaling as possibile outside the Game Engine </h5>
+                      <p> 
+                        make the background/foreground art externally and not in the game engine directly (more options for processing and less node chaos in the editor)
+                        scaling sprites in Godot can lead to pixelization and artifacts (do as much of the necessary scaling as possible whilst creating the art)
+                        import settings can influence the image quality drastically
+                      </p>
+
+                    <h5>(4) Importance of User Settings for Player Speed and Volume</h5>
+                      <p> user settings for player speed and volume</p>  
+
+                    <h5>(5) Using a Pre-made Dialog System instead of Writing one from Scratch</h5>
+
+                    <h5>(6) Godot is somtimes Complicated and Unstable</h5>
+                      <p>
+                        Changing font size/including icons in text is difficult and teadious in Godot 3.x 
+                        different supported screen sizes complicated to realize in Godot 2D 
+                        Godot web build not always stable and can lack (makes player speed setting even more important)
+                      </p>
+
+                  <h3>Final Thoughts</h3>
+                    <p>
+                      The topic of the jam was an intersting challenge. The jam itself was fun, the HonestDan community was great 
+                      and I received a lot of helpful feedback. I learned a lot about Godot and game design in general.
+                    </p>
+                    <p>
+                      The feedback so far showed that I met my major design goals (story telling, art style). 
+                    </p>
+
+                  <h5>Links to the Game:</h5>
+                    <ul>
+                      <li>
+                        Current Version: <br>
+                        <a href="https://dsacre.itch.io/the-raccoonteur">https://dsacre.itch.io/the-raccoonteur</a>
+                      </li>
+                      <li>
+                        Original Jam Entry: <br>
+                        <a href="https://dsacre.itch.io/the-raccoonteur-honest-jam-iv">https://dsacre.itch.io/the-raccoonteur-honest-jam-iv</a>
+                      </li>
+                    </ul>
+
+                    <h5>Streamer Coverage:</h5>
+                    <ul>
+                      <li>
+                        HonestDan:<br>
+                        <a href="https://youtu.be/HNXhQlpqNmU?t=6131">https://youtu.be/HNXhQlpqNmU?t=6131</a>
+                      </li>
+                      <li>
+                        RookRules: <br>
+                        <a href="https://www.twitch.tv/videos/1548648587?t=02h44m53s">https://www.twitch.tv/videos/1548648587?t=02h44m53s</a>
+                      </li>
+                    </ul>
+
+                  <div class="w3-row noprint">
+                      <div class="w3-col m8 s12">
+                      <p>
+                          <form method="get" action="#raccoonteur-top">
+                          <button class="w3-button w3-padding-large w3-white w3-border" type="submit" onclick="hideContentByID('raccoonteur', 'raccoonteur-collapsible')"><b>Show less</b></button>
+                          </form>
+                      </p>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          -->
+
+            <!-- beyond the pond-->
+            <!--
+            <div class="w3-card-4 w3-margin w3-white" id="beyond-the-pond-top">
+              <div class="w3-container collapsible" id="beyond-the-pond-collapsible">
+                  <h3><b>Beyond the Pond: A Godot Game for the Honest Jam V</b></h3>
+                  <h5><span class="w3-opacity">Last Update: December 24, 2022</span></h5>
+              </div>
+              <div class="w3-container" id="beyond-the-pond" style="display: none;">
+
+                <div class="w3-row noprint">
+                  <div class="w3-col m8 s12">
+                  <p>
+                      <form method="get" action="#beyond-the-pond-top">
+                      <button class="w3-button w3-padding-large w3-white w3-border" type="submit" onclick="hideContentByID('beyond-the-pond', 'beyond-the-pond-collapsible')"><b>Show less</b></button>
+                      </form>
+                  </p>
+                  </div>
+              </div>
+
+              </div>
+            </div>
+          -->
+
+          <!-- END BLOG ENTRIES -->
+          </div>
+
+          <!-- Introduction menu -->
+          <div class="w3-col l4 noprint">
+            <!--
+            <div class="w3-card w3-margin w3-margin-top">
+              <img class="screen-image-scale print-image-scale" src="../game-dev/beyond_the_pond/submarine_test6_front_eevee-toon_water.png"> </img> 
+              <div class="w3-container w3-white">
+                <h4><b>Beyond the Pond</b></h4>
+                  <p>
+                    This is a piece of concept art for my most recent project: "Beyond the Pond". It is a narrative focused game centered around mental health, bullying and being different.
+                    It was made for the <a href="https://itch.io/jam/honest-jam-5" target="_blank" rel="noopener noreferrer">Honest Jam V</a>. 
+                    <br>A post-mortem about this project can be found <a href="#beyond-the-pond-top">here</a>.
+                  </p>
+              </div>
+            </div>-->
+            
+            <!-- links -->
+            <div class="w3-card w3-margin">
+              <div class="w3-container w3-padding">
+                <h4>Online Presences</h4>
+              </div>
+              <div class="w3-container w3-white" style="padding-top: 8px; padding-bottom: 8px;">
+                <div style=" display: flex; align-items: center; padding-top: 2px; padding-bottom: 2px;">
+                  <img src="./img/web-activity_icons/GitHub-Mark-64px.png" style="max-width: 24px; padding-right: 4px;"> 
+                  <span style="color:gray;font-weight: bold; padding-left: 2px; padding-right: 4px;">Github://</span> <a href="https://github.com/d-sacre/" target="_blank" rel="noopener noreferrer">d-sacre</a>
+                </div>
+
+                <!--<div style=" display: flex; align-items: center; padding-top: 2px; padding-bottom: 2px;">
+                  <img src="./img/web-activity_icons/sourceforge.png" style="max-width: 24px; padding-right: 4px;"> 
+                  <span style="color:gray;font-weight: bold; padding-left: 2px; padding-right: 4px;">SourceForge://</span> <a href="https://github.com/d-sacre/" target="_blank" rel="noopener noreferrer">d-sacre</a>
+                </div>-->
+                
+                <div style=" display: flex; align-items: center; padding-top: 2px; padding-bottom: 2px;">
+                  <img src="./img/web-activity_icons/240px-ORCID_iD.png" style="max-width: 24px; padding-right: 4px;"> 
+                  <span style="color:gray;font-weight: bold; padding-left: 2px; padding-right: 4px;">ORCiD://</span> <a href="https://orcid.org/0000-0001-7729-7111" target="_blank" rel="noopener noreferrer">0000-0001-7729-7111</a>
+                </div>
+
+                <div style=" display: flex; align-items: center; padding-top: 2px; padding-bottom: 2px;">
+                  <img src="./img/web-activity_icons/320px-Itch.io_logo.png" style="max-width: 24px; padding-right: 4px;"> 
+                  <span style="color:gray;font-weight: bold; padding-left: 2px; padding-right: 4px;">itch.io://</span> <a href="https://dsacre.itch.io/" target="_blank" rel="noopener noreferrer">dsacre</a>
+                </div>
+
+                <div style=" display: flex; align-items: center; padding-top: 2px; padding-bottom: 2px;">
+                  <img src="./img/web-activity_icons/artstation_icon-64px.png" style="max-width: 24px; padding-right: 4px;"> 
+                  <span style="color:gray;font-weight: bold; padding-left: 2px; padding-right: 4px;">ArtStation://</span> <a href="https://dsacre.artstation.com/" target="_blank" rel="noopener noreferrer">dsacre</a>
+                </div>
+
+                <div style=" display: flex; align-items: center; padding-top: 2px; padding-bottom: 2px;">
+                  <img src="./img/web-activity_icons/240px-Stack_Exchange_icon.png" style="max-width: 24px; padding-right: 4px;"> 
+                  <span style="color:gray;font-weight: bold; padding-left: 2px; padding-right: 4px;">StackExchange://</span> <a href="https://stackexchange.com/users/23800391/dsacre" target="_blank" rel="noopener noreferrer">dsacre</a>
+                </div>
+
+                <div style=" display: flex; align-items: center; padding-top: 2px; padding-bottom: 2px;">
+                  <img src="./img/web-activity_icons/Sara_OpenGameArt_icon.png" style="max-width: 24px; padding-right: 4px;"> 
+                  <span style="color:gray;font-weight: bold; padding-left: 2px; padding-right: 4px;">OpenGameArt://</span> <a href="https://opengameart.org/users/dsacre" target="_blank" rel="noopener noreferrer">dsacre</a>
+                </div>
+
+                <div style=" display: flex; align-items: center; padding-top: 2px; padding-bottom: 2px;">
+                  <img src="./img/web-activity_icons/pexels_icon-64px.png" style="max-width: 24px; padding-right: 4px;"> 
+                  <span style="color:gray;font-weight: bold; padding-left: 2px; padding-right: 4px;">Pexels://</span> <a href="https://www.pexels.com/@daniel-sacre-184410349/" target="_blank" rel="noopener noreferrer">@daniel-sacre-184410349</a>
+                </div>
+              </div>
+            </div>
+
+            
+            <!-- Labels / tags -->
+            <div class="w3-card w3-margin noprint">
+              <div class="w3-container w3-padding">
+                <h4>Tags</h4>
+              </div>
+              <div class="w3-container w3-white">
+              <p>
+                <span class="w3-tag w3-black w3-margin-bottom">Game Development</span> 
+                <span class="w3-tag w3-black w3-margin-bottom">Godot Engine</span>  
+                <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">GDScript</span>
+                <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">html</span>
+                <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">css</span>
+                <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">JavaScript</span>
+              </p>
+              </div>
+            </div>
+            
+          <!-- END Introduction Menu -->
+          </div>
+
+          <!-- END GRID -->
+          </div><br>
+          
+      <!-- END w3-content -->
+      </div>
+
+      <!-- Footer -->
+      <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top noprint">
+        <p>
+            <a href="../index.html">Home</a> <a href="./imprint.html" target="_blank" rel="noopener noreferrer">Imprint</a> <a href="./privacy.html" target="_blank" rel="noopener noreferrer">Privacy</a></br>
+            GitHub Repositories: <a href="https://github.com/d-sacre/" target="_blank" rel="noopener noreferrer">https://github.com/d-sacre/</a> <br>
+            Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" rel="noopener noreferrer">w3.css</a>, 
+            Syntax Highlighting by <a href="https://highlightjs.org/" target="_blank" rel="noopener noreferrer">highlight.js</a>
+        </p>
+      </footer>
+
+  </body>
+
+  <!--Include script for collapsible content and slide show-->
+  <script src="./js/collapsible.js"></script>
+  <script src="./js/slideshow.js"></script>
+
+</html>
